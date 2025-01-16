@@ -300,7 +300,7 @@ function GiftedChat<TMessage extends IMessage = IMessage> (
   const contentStyleAnim = useAnimatedStyle(
     () => ({
       transform: [
-        { translateY: keyboard.height.value === 0 ? 0 : -keyboard.height.value + keyboardOffsetBottom.value },
+        { translateY: keyboard.height.value <= bottomOffset ? 0 : -keyboard.height.value + keyboardOffsetBottom.value },
       ],
     }),
     [keyboard, keyboardOffsetBottom]
@@ -572,7 +572,7 @@ function GiftedChat<TMessage extends IMessage = IMessage> (
         const isKeyboardMovingUp = value > prevValue
         if (isKeyboardMovingUp !== trackingKeyboardMovement.value) {
           trackingKeyboardMovement.value = isKeyboardMovingUp
-          keyboardOffsetBottom.value = withTiming(isKeyboardMovingUp || (!isKeyboardMovingUp && value !== 0 ) ? insets.bottom + bottomOffset : 0,
+          keyboardOffsetBottom.value = withTiming(isKeyboardMovingUp || (!isKeyboardMovingUp && value !== 0) ? insets.bottom + bottomOffset : 0,
             {
               // If `bottomOffset` exists, we change the duration to a smaller value to fix the delay in the keyboard animation speed
               duration: bottomOffset ? 150 : 400,

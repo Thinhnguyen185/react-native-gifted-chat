@@ -9394,9 +9394,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-native-gifted-chat@workspace:.":
+"react-native-gifted-chat-v2@workspace:.":
   version: 0.0.0-use.local
-  resolution: "react-native-gifted-chat@workspace:."
+  resolution: "react-native-gifted-chat-v2@workspace:."
   dependencies:
     "@babel/core": ^7.26.0
     "@babel/plugin-transform-flow-strip-types": ^7.25.9
